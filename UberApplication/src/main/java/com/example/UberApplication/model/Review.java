@@ -5,6 +5,8 @@ import lombok.*;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.Date;
 
@@ -15,6 +17,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ReviewTable")
+@EntityListeners(AuditingEntityListener.class)
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +37,11 @@ public class Review {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate // This tells the spring to only handle it at the update of object
     private Date updatedOn;
+
+    @Override
+    public String toString(){
+        return "Review: "+this.rating+" "+this.content;
+    }
 
 
 }
