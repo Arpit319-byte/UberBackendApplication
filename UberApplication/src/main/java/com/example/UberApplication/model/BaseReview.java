@@ -9,6 +9,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
+@MappedSuperclass
+@Getter
+@Setter
+
 public abstract class  BaseReview {
 
     @Id
