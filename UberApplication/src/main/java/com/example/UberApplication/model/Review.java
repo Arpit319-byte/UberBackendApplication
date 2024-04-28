@@ -18,25 +18,14 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "ReviewTable")
 @EntityListeners(AuditingEntityListener.class)
-public class Review {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Review extends BaseReview {
 
     @Column(nullable = false)
     private String content;
 
+    @Column
     private String rating;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP) // It is used for setting the time/date/date.time
-    @CreatedDate // This tells the spring to only handle it at the creation of object
-    private Date createdOn;
-
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate // This tells the spring to only handle it at the update of object
-    private Date updatedOn;
 
     @Override
     public String toString(){
