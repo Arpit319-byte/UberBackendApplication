@@ -8,26 +8,25 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
-@EntityListeners(AuditingEntityListener.class)
-@MappedSuperclass
+// This is the BaseReview abstract class
+@EntityListeners(AuditingEntityListener.class) // This enables JPA auditing
+@MappedSuperclass // This specifies that this class is a base class for other entities
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class  BaseReview {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // This specifies the inheritance strategy
+public abstract class BaseReview {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // This specifies the primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // This specifies the primary key generation strategy
     protected Long id;
 
-
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP) // It is used for setting the time/date
-    @CreatedDate // This tells the spring to only handle it at the creation of object
+    @Column(nullable = false) // This specifies that the createdOn column cannot be null
+    @Temporal(TemporalType.TIMESTAMP) // This specifies the type of the date/time
+    @CreatedDate // This specifies that this field should be populated with the current date/time when the entity is created
     protected Date createdOn;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate // This tells the spring to only handle it at the update of object
+    @Column(nullable = false) // This specifies that the updatedOn column cannot be null
+    @Temporal(TemporalType.TIMESTAMP) // This specifies the type of the date/time
+    @LastModifiedDate // This specifies that this field should be populated with the current date/time when the entity is updated
     protected Date updatedOn;
-
 }
