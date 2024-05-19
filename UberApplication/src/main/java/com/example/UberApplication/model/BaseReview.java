@@ -13,11 +13,11 @@ import java.util.Date;
 @MappedSuperclass // This specifies that this class is a base class for other entities
 @Getter
 @Setter
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // This specifies the inheritance strategy
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // This specifies the inheritance strategy
 public abstract class BaseReview {
 
     @Id // This specifies the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // This specifies the primary key generation strategy
+    @GeneratedValue(strategy = GenerationType.TABLE) // This specifies the primary key generation strategy
     protected Long id;
 
     @Column(nullable = false) // This specifies that the createdOn column cannot be null
