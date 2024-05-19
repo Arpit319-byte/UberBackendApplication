@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Inheritance(strategy = InheritanceType.JOINED) // This specifies the inheritance strategy
-public abstract class BaseReview {
+public abstract class BaseModel {
 
     @Id // This specifies the primary key
     @GeneratedValue(strategy = GenerationType.AUTO) // This specifies the primary key generation strategy

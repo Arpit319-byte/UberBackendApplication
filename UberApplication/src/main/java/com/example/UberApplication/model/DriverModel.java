@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class DriverReview extends Review {
+public class DriverModel extends Model {
 
     // This is the driver review
     private String driverReview;

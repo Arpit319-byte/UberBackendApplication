@@ -2,13 +2,7 @@ package com.example.UberApplication.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-
-import java.util.Date;
 
 // This is the Review entity class
 @Entity
@@ -19,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "ReviewTable") // This specifies the table name in the database
 @EntityListeners(AuditingEntityListener.class) // This enables JPA auditing
-public class Review extends BaseReview {
+public class Model extends BaseModel {
 
     @Column(nullable = false) // This specifies that the content column cannot be null
     private String content;

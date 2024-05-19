@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class PassengerReview extends Review {
+public class PassengerModel extends Model {
 
     // This is the passenger review
     private String passengerReview;
