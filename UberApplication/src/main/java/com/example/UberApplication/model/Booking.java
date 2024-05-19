@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Booking extends BaseModel{
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(value=EnumType.ORDINAL)
     private BookingStatus bookingStatus;
 
     private Date startTime;
