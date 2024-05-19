@@ -12,7 +12,7 @@ import java.util.Date;
 @MappedSuperclass
 @Getter
 @Setter
-
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class  BaseReview {
 
     @Id
@@ -21,7 +21,7 @@ public abstract class  BaseReview {
 
 
     @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP) // It is used for setting the time/date/date.time
+    @Temporal(TemporalType.TIMESTAMP) // It is used for setting the time/date
     @CreatedDate // This tells the spring to only handle it at the creation of object
     protected Date createdOn;
 
