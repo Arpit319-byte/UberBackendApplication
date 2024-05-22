@@ -17,7 +17,7 @@ import java.util.Date;
 public abstract class BaseModel {
 
     @Id // This specifies the primary key
-    @GeneratedValue(strategy = GenerationType.AUTO) // This specifies the primary key generation strategy
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // This specifies the primary key generation strategy
     protected Long id;
 
     @Column(nullable = false) // This specifies that the createdOn column cannot be null
