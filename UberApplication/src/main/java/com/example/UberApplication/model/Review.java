@@ -12,8 +12,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ReviewTable") // This specifies the table name in the database
-@EntityListeners(AuditingEntityListener.class) // This enables JPA auditing
-public class Model extends BaseModel {
+//@EntityListeners(AuditingEntityListener.class) // This enables JPA auditing
+public class Review extends BaseModel {
 
     @Column(nullable = false) // This specifies that the content column cannot be null
     private String content;

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PassengerModel extends Model {
+public class PassengerReview extends Review {
 
     // This is the passenger review
     @Column(nullable = false) // This specifies that the passenger review column cannot be null

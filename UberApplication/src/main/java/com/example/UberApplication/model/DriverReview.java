@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DriverModel extends Model {
+public class DriverReview extends Review {
 
     // This is the driver review
     @Column(nullable = false) // This specifies that the driver review column cannot be null
