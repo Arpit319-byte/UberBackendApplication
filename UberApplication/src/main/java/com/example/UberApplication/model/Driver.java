@@ -22,11 +22,9 @@ public class Driver extends BaseModel{
     @Column(nullable = false, unique = true)
     private String licenseNumber;
 
-    @OneToMany
+    @OneToMany(mappedBy = "driver")
     private List<Booking> bookings=new ArrayList<>();
 
-    @OneToMany
-    private List<Review> reviews=new ArrayList<>();
 
 
 }
