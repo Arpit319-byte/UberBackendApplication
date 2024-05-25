@@ -37,6 +37,9 @@ public class Booking extends BaseModel {
     // Total distance of the trip
     private Long totalDistance;
 
+    @ManyToOne
+    private Driver driver;
+
     @Override
     public String toString(){
         return "Booking: "+this.bookingStatus+" "+this.startTime+" "+this.endTime+" "+this.totalDistance;
